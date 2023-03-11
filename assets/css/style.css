@@ -1,81 +1,69 @@
 body{
-    margin: 20px;
+    margin: 15px;
     font-size: 18px;
 }
 
-.header{
-    margin-bottom: 10px
+.header__container{
+    margin-bottom: 50px
 }
 
-.main{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.main__title{
-    font-family: monospace;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: center;
-    color: blueviolet;
-}
-
-.main__box{
-    width: 280px;
-    height: 350px;
-    resize: none;
-    outline: none;
-    border: 0;
-    padding: 5px;
-}
-
-
-.main__box2{
-    width: 280px;
-    height: 350px;
-    resize: none;
-    outline: none;
-    border: 0;
-    padding: 5px;
-}
-
-
-.main__box::placeholder{
-    font-family: monospace;
-    font-size: 15px;
-    text-transform: uppercase;
-}
-
-.main__box2::placeholder{
-    font-family: monospace;
-    font-size: 15px;
-    text-transform: uppercase;
-}
-
-.main__p{
-    display: flex;
-    align-items: center;
-    color: #333;
-    font-size: 15px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.main__p span{
-    margin-right: 5px;
-}
-
-
-.main__btn{
+.main__container, .main__inputContainer, .main_outputContainer, .textareaContainer, .alertContainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
-.main__btn-button{
+
+
+.textarea{
+    width: 280px;
+    height: 350px;
+    resize: none;
+    outline: none;
+    border: 0;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+}
+
+
+.textarea::placeholder{
+    font-family: monospace;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.inputContainer__p, .outputContainer__p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 0 15px 0;
+}
+
+.outputContainer__p{
+    color: green;
+}
+
+.inputContainer__p span, .outputContainer__p span{
+    margin-right: 5px;
+}
+
+
+.inputContainer__buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.btn{
     width: 250px;
     height: 50px;
     margin: 5px;
@@ -84,36 +72,17 @@ body{
     background-color:#0A3871;
     color: white;
     cursor: pointer;
+    font-weight: bold;
 }
 
-.des{
+.button__desencriptar, .button__actualizar{
     background-color: white;
     border: 1px solid #0A3871;
     color: #0A3871;
 }
 
-.main__outputContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
-.main__output{
-    width: 280px;
-    height: 350px;
-    resize: none;
-    outline: none;
-    border: 0;
-    padding: 5px;
-}
-
-.main .oculto{
-    display: none;
-}
-
-
-.main__alert{
+.alertContainer{
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
     border-radius: 32px;
     width: 100%;
@@ -121,84 +90,78 @@ body{
     height: 180px;
     padding: 32px;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.main__alert img{
+.alertContainer img{
     display: none;
 }
 
 .alert__title{
     font-size: 24px;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     color: #343A40;
 }
 
 .alert__p{
     font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
     color: #495057;
 }
 
 
+.main_outputContainer .oculto{
+    display: none;
+}
+
+
+
+
 @media(min-width:768px){
 
-    .main__box{
+    .textarea{
         width: 700px;
         height: 400px;
         resize: none;
         outline: none;
         border: 0;
-        padding: 5px;
+        padding: 15px;
         font-size: 18px;
     }
     
-    .main__box::placeholder{
-        font-size: 18px;
+    .textarea::placeholder{
+        font-size: 16px;
     }
 
-
-    .main__btn{
+    .inputContainer__buttons{
         flex-direction: row;
     }
+
 }
 
 
 @media(min-width:1440px){
-    .main{
+    .main__container{
         flex-direction: row;
         justify-content: space-around;
+        align-items: flex-start;
         height: 800px;
     }
 
-    .containerDesktop{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .main__box{
-        width: 350px;
-        height: 500px;
+    .inputContainer, .outputContainer{
+        height: 80%;
     }
     
-    .main__box::placeholder{
-        font-size: 18px;
-    }
-
-
-    .main__alert{
+    .alertContainer{
         width: 400px;
         height: 700px;
     }
-    .main__alert img{
-        width: 300px;
-        height: 300px;
+    .alertContainer img{
+        width: 100%;
         display: block;
     }
+
 }

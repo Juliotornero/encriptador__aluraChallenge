@@ -26,42 +26,46 @@
 
 <body>
 
-    <header class="header">
+    <header class="header__container">
         <img src="assets/img/Vector.svg" alt="Logo Alura">
     </header>
 
-    <main class="main">
+    <main class="main__container">
 
-        <div class="containerDesktop">
+        <section class="main__inputContainer">
 
-            <textarea class="main__box" name="" id="input" cols="30" rows="20" placeholder="Ingresa el texto a Encriptar..."></textarea>
-            <p class="main__p"><span class="material-icons-outlined">info</span>Solo letras minúsculas y sin acentos</p>
+            <textarea class="inputContainer textarea" cols="30" rows="20" placeholder="Texto a encriptar..."></textarea>
 
-            <div class="main__btn">
-                <input class="main__btn-button encriptar" type="button" value="Encriptar" onclick="btnEncriptar()">
-                <input class="main__btn-button desencriptar des" type="button" value="Desencriptar" onclick="btnDesencriptar()">
+            <p class="inputContainer__p"><span class="material-icons-outlined">info</span>Solo letras minúsculas y sin acentos</p>
+
+            <div class="inputContainer__buttons">
+                <input class="btn button__encriptar"        type="button" value="Encriptar"     onclick="btnEncriptar()">
+                <input class="btn button__desencriptar"     type="button" value="Desencriptar"  onclick="btnDesencriptar()">
             </div>
 
-        </div>
+        </section>
+
+
     
-        <div class="main__outputContainer">
-
-            <div class="main__alert oculto">
-                <img src="/assets/img/Muñeco.svg" alt="Imagen de un joven con lupa">
-                <h2 class="alert__title">Ningún mensaje fue encontrado</h2>e        
-                <p class="alert__p">Ingresa el texto que desees encriptar o desencriptar.</p>
-            </div>
-
-            <div class="main__salida">
-
-                <textarea class="main__box2" name="" id="output" cols="30" rows="20" placeholder="El texto se mostrara aqui..."></textarea>
-                <input class="main__btn-button" type="button" value="Copiar">
+        <section class="main_outputContainer">
+            
+            <div class="textareaContainer oculto">
+                <textarea class="outputContainer textarea" cols="30" rows="20" placeholder="Texto encriptado..."></textarea>
+                <p class="outputContainer__p oculto"><span class="material-icons-outlined">check</span>Texto copiado al portapapeles</p>
+                <div class="inputContainer__buttons">
+                    <input class="btn button__copiar" type="button" value="Copiar" onclick="copiar()">
+                    <input class="btn button__actualizar" type="button" value="Actualizar" onclick="actualizar()">
+                </div>
             </div>
           
+            <div class="alertContainer">
+                <img src="/assets/img/Muñeco.svg" alt="Imagen de un joven con lupa">
+                <h2 class="alert__title">Ningún mensaje fue encontrado</h2>     
+                <p class="alert__p">Ingresa el texto que desees encriptar o desencriptar.</p>
+            </div>
             
-        </div>
+        </section>
 
-        
         
     </main>
 

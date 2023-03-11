@@ -1,5 +1,5 @@
-const entrada = document.querySelector('.main__box');
-const salida = document.querySelector('.main__box2');
+const entrada = document.querySelector('.inputContainer');
+const salida = document.querySelector('.outputContainer');
 
 
 
@@ -31,8 +31,8 @@ function btnEncriptar(){
     const textoEncriptado = encriptar(entrada.value);
 
 
-    const mostrar = document.querySelector('.main__salida');
-    const ocultar = document.querySelector('.main__alert');
+    const mostrar = document.querySelector('.textareaContainer');
+    const ocultar = document.querySelector('.alertContainer');
 
     mostrar.classList.remove('oculto');
     ocultar.classList.add('oculto');
@@ -68,4 +68,18 @@ function btnDesencriptar(){
     salida.value = textoEncriptado;
     entrada.value= "";
 
+}
+
+function copiar(){
+    const textoEncriptado = document.querySelector('.outputContainer');
+    const confirm = document.querySelector('.outputContainer__p');
+
+    textoEncriptado.select();
+    document.execCommand('copy');
+
+    confirm.classList.remove('oculto');
+}
+
+function actualizar(){
+   location.reload();
 }
